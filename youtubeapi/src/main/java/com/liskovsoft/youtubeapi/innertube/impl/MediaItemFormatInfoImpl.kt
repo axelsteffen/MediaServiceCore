@@ -20,6 +20,7 @@ import com.liskovsoft.youtubeapi.innertube.utils.getAdaptiveFormats
 import com.liskovsoft.youtubeapi.innertube.utils.getLegacyFormats
 import com.liskovsoft.youtubeapi.innertube.utils.getLoudnessDb
 import com.liskovsoft.youtubeapi.innertube.utils.getMergeCaptionTracks
+import com.liskovsoft.youtubeapi.innertube.utils.getCategory
 import com.liskovsoft.youtubeapi.innertube.utils.getPaidContentText
 import com.liskovsoft.youtubeapi.innertube.utils.getPlayabilityDescription
 import com.liskovsoft.youtubeapi.innertube.utils.getPlayabilityReason
@@ -81,6 +82,7 @@ internal data class MediaItemFormatInfoImpl(private val playerResult: PlayerResu
     private val _description by lazy { videoDetails?.shortDescription }
     private val _videoId by lazy { videoDetails?.videoId }
     private val _channelId by lazy { videoDetails?.channelId }
+    private val _category by lazy { playerResult.getCategory() }
     private val _isLive by lazy { videoDetails?.isLive ?: false }
     private val _isLiveContent by lazy { videoDetails?.isLiveContent ?: false }
     private val _containsAdaptiveVideoFormats by lazy { containsAdaptiveVideoInfo() }
@@ -158,6 +160,8 @@ internal data class MediaItemFormatInfoImpl(private val playerResult: PlayerResu
     override fun getVideoId() = _videoId
 
     override fun getChannelId() = _channelId
+
+    override fun getCategory() = _category
 
     override fun isLive() = _isLive
 

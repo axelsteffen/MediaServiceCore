@@ -68,7 +68,8 @@ internal data class PlayerResult(
     ) {
         data class PlayerMicroformatRenderer(
             val liveBroadcastDetails: LiveBroadcastDetails?,
-            val uploadDate: String?
+            val uploadDate: String?,
+            val category: String?
         ) {
             data class LiveBroadcastDetails(
                 val startTimestamp: String?

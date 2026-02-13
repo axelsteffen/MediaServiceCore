@@ -35,6 +35,7 @@ public class YouTubeMediaItemFormatInfo implements MediaItemFormatInfo {
     private String mDescription;
     private String mVideoId;
     private String mChannelId;
+    private String mCategory;
     private boolean mIsLive;
     private boolean mIsLiveContent;
     private boolean mIsLowLatencyLiveStream;
@@ -139,6 +140,7 @@ public class YouTubeMediaItemFormatInfo implements MediaItemFormatInfo {
         formatInfo.mServerAbrStreamingUrl = videoInfo.getServerAbrStreamingUrl();
         formatInfo.mPoToken = videoInfo.getPoToken();
         formatInfo.mClient = videoInfo.getClient();
+        formatInfo.mCategory = videoInfo.getCategory();
 
         List<CaptionTrack> captionTracks = videoInfo.getCaptionTracks();
 
@@ -203,6 +205,11 @@ public class YouTubeMediaItemFormatInfo implements MediaItemFormatInfo {
     @Override
     public String getChannelId() {
         return mChannelId;
+    }
+
+    @Override
+    public String getCategory() {
+        return mCategory;
     }
 
     @Override

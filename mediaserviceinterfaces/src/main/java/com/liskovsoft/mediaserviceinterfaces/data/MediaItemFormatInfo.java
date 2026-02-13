@@ -19,6 +19,11 @@ public interface MediaItemFormatInfo extends FormatInfoProvision {
     String getDescription();
     String getVideoId();
     String getChannelId();
+    /**
+     * YouTube video category (e.g. "Music", "Gaming", "News & Politics").
+     * @return category string or null if not available
+     */
+    String getCategory();
     boolean isLive();
     boolean isLiveContent();
     boolean containsMedia();

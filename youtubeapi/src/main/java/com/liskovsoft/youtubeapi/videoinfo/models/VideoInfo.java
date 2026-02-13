@@ -86,6 +86,9 @@ public class VideoInfo {
     @JsonPath("$.microformat.playerMicroformatRenderer.uploadDate")
     private String mUploadDate;
 
+    @JsonPath("$.microformat.playerMicroformatRenderer.category")
+    private String mCategory;
+
     @JsonPath("$.playerConfig.audioConfig.loudnessDb")
     private float mLoudnessDb;
 
@@ -317,6 +320,14 @@ public class VideoInfo {
 
     public String getUploadDate() {
         return mUploadDate;
+    }
+
+    /**
+     * YouTube video category (e.g. "Music", "Gaming", "News & Politics").
+     * May be URL-encoded (e.g. "News+%26+Politics").
+     */
+    public String getCategory() {
+        return mCategory;
     }
 
     public long getStartTimeMs() {

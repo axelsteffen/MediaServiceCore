@@ -27,6 +27,7 @@ internal fun PlayerResult.getPlayabilityDescription() = playabilityStatus?.error
 internal fun PlayerResult.isPlayableInEmbed() = playabilityStatus?.playableInEmbed ?: false
 internal fun PlayerResult.getStartTimestamp() = microformat?.playerMicroformatRenderer?.liveBroadcastDetails?.startTimestamp
 internal fun PlayerResult.getUploadDate() = microformat?.playerMicroformatRenderer?.uploadDate
+internal fun PlayerResult.getCategory() = microformat?.playerMicroformatRenderer?.category
 internal fun PlayerResult.getPaidContentText() = paidContentOverlay?.paidContentOverlayRenderer?.text?.getText()
 internal fun PlayerResult.getWatchTimeUrl() = playbackTracking?.videostatsWatchtimeUrl?.baseUrl
 private fun PlayerResult.getCaptionTracks() = captions?.playerCaptionsTracklistRenderer?.captionTracks
